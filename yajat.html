@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yajat Krishnan - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --light-gray: #f5f7fa;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(255,255,255,0.05)" width="50" height="50" x="0" y="0"></rect><rect fill="rgba(255,255,255,0.05)" width="50" height="50" x="50" y="50"></rect></svg>');
+            opacity: 0.3;
+        }
+        
+        header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .title {
+            font-weight: 300;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-item i {
+            color: var(--light);
+        }
+        
+        .section {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section:hover::after {
+            width: 6px;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .objective p {
+            text-align: justify;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .education-item, .experience-item, .certification-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed var(--light);
+        }
+        
+        .education-item:last-child, .experience-item:last-child, .certification-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .item-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            background: var(--light-gray);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        
+        .item-subtitle {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .item-list {
+            padding-left: 20px;
+        }
+        
+        .item-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .item-list li::before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: var(--primary);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .skill-category h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(52, 152, 219, 0.3);
+        }
+        
+        .languages {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .language {
+            text-align: center;
+            position: relative;
+        }
+        
+        .language-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary) 100%, var(--light) 0%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .language-circle::before {
+            content: '';
+            position: absolute;
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
+            background: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .language-circle span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .download-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .header-content {
+                order: 2;
+                margin-top: 20px;
+            }
+            
+            .profile-image {
+                order: 1;
+                width: 120px;
+                height: 120px;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+            }
+            
+            .languages {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+        }
+        
+        /* Animation classes */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Pulse animation for important elements */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1 class="name">YAJAT KRISHNAN</h1>
+                <p class="title">Computer Science and Engineering Undergraduate</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Greater Noida West, UP, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>krishnanyajat@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>8800545103</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/yajatkrishnan</span>
+                    </div>
+                </div>
+            </div>
+            <img src="pf.jpeg" alt="Yajat Krishnan" class="profile-image hidden">
+        </header>
+        
+        <section class="section objective hidden">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i>Objective</h2>
+            <p>Passionate and dedicated Computer Science and Engineering undergraduate from the prestigious South Asian University, eager to apply technical expertise, creativity, and problem-solving skills to contribute to cutting-edge projects at CERN. Driven by a deep fascination for technology and innovation, I aspire to make a meaningful impact in the field of science and technology.</p>
+        </section>
+        
+        <section class="section education hidden">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <h3 class="item-title">Bachelor of Technology in Computer Science and Engineering</h3>
+                    <span class="item-date">2024-2028</span>
+                </div>
+                <p class="item-subtitle">South Asian University (International University Established by the Government of SAARC Countries)</p>
+                <ul class="item-list">
+                    <li>Developing a strong foundation in computer science principles, with coursework in Data Structures and Algorithms, Digital Logic & Design, Web Design, and Python.</li>
+                    <li>Actively exploring software development, complex algorithms, and innovative solutions to real-world challenges.</li>
+                </ul>
+            </div>
+            <div class="education-item">
+                <div class="item-header">
+                    <h3 class="item-title">High School</h3>
+                    <span class="item-date">Graduation Year</span>
+                </div>
+                <p class="item-subtitle">Delhi Public School Ghaziabad</p>
+                <ul class="item-list">
+                    <li>Maintained a strong academic record and excelled in prestigious Olympiads, earning medals and recognition.</li>
+                    <li>Represented the school cricket team, showcasing leadership and teamwork.</li>
+                    <li>Actively participated in theatre and cultural activities, developing creativity and stage presence.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section experience hidden">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i>Work Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3 class="item-title">Campus Ambassador</h3>
+                    <span class="item-date">December 2024 - Present</span>
+                </div>
+                <p class="item-subtitle">E-Summit, IIT Roorkee</p>
+                <ul class="item-list">
+                    <li>Promoted one of India's premier entrepreneurship events across campus, fostering engagement among students and faculty.</li>
+                    <li>Coordinated with event organizers to disseminate key information and organized outreach activities, increasing participation.</li>
+                    <li>Built and maintained a network of students and stakeholders interested in entrepreneurial initiatives.</li>
+                    <li>Amplified event visibility through social media and on-campus channels, driving engagement.</li>
+                    <li>Facilitated seamless communication between campus participants and the E-Summit team.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section skills hidden">
+            <h2 class="section-title"><i class="fas fa-code"></i>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C Language</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Web Design</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag pulse">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Core Concepts</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Digital Logic & Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Certifications</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">NPTEL Certification</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section certifications hidden">
+            <h2 class="section-title"><i class="fas fa-certificate"></i>Certifications</h2>
+            <div class="certification-item">
+                <ul class="item-list">
+                    <li>Attended Advanced Drone Technology (Air Taxi) Workshop conducted by India Space Lab.</li>
+                    <li>Basics of Data Structures & Algorithms certification from Simplilearn.</li>
+                    <li>Currently enrolled in NPTEL courses conducted by IITs in Python and problem-solving using C language.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section extracurricular hidden">
+            <h2 class="section-title"><i class="fas fa-running"></i>Extracurricular Activities</h2>
+            <div class="certification-item">
+                <ul class="item-list">
+                    <li>Represented academy cricket team; won certificates in cricket.</li>
+                    <li>Secured medals and trophies in UCMAS Abacus competitions.</li>
+                    <li>Won a bronze medal in Taekwondo at a Delhi-level competition.</li>
+                    <li>Passionate about table tennis and theatre; actively participated in school cultural activities.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section languages hidden">
+            <h2 class="section-title"><i class="fas fa-language"></i>Languages</h2>
+            <div class="languages">
+                <div class="language">
+                    <div class="language-circle"><span>100%</span></div>
+                    <h4>English</h4>
+                </div>
+                <div class="language">
+                    <div class="language-circle"><span>100%</span></div>
+                    <h4>Hindi</h4>
+                </div>
+            </div>
+        </section>
+        
+        <div style="text-align: center;">
+            <a href="#" class="download-btn hidden"><i class="fas fa-download"></i> Download Resume</a>
+        </div>
+        
+        <footer class="hidden">
+            <p>© 2024 Yajat Krishnan. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+       
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                tag.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    tag.style.transform = 'translateY(-3px)';
+                }, 100);
+            });
+        });
+
+       
+        const header = document.querySelector('header');
+        header.addEventListener('mouseenter', () => {
+            header.style.transform = 'translateY(-5px)';
+            header.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.25)';
+        });
+        
+        header.addEventListener('mouseleave', () => {
+            header.style.transform = 'translateY(0)';
+            header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.15)';
+        });
+
+        // Profile image hover effect
+        const profileImage = document.querySelector('.profile-image');
+        if (profileImage) {
+            profileImage.addEventListener('mouseenter', () => {
+                profileImage.style.transform = 'scale(1.05) rotate(5deg)';
+                profileImage.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.3)';
+            });
+            
+            profileImage.addEventListener('mouseleave', () => {
+                profileImage.style.transform = 'scale(1) rotate(0)';
+                profileImage.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            });
+        }
+
+        // Download button functionality
+        const downloadBtn = document.querySelector('.download-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Resume download functionality would be implemented here in a production environment.');
+            });
+        }
+    </script>
+</body>
+</html>
